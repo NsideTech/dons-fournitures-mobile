@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">La Shop</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="nav_account_title">Mon compte</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

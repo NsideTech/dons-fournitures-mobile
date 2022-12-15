@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodeText">
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_accueil"
+            android:title="Accueil" />
+        <item
+            android:id="@+id/nav_listes"
+            android:title="Listes" />
+        <item
+            android:id="@+id/nav_detail"
+            android:title="Détails" />
+        <item
+            android:id="@+id/nav_don"
+            android:title="Formulaire Don" />
+        <item
+            android:id="@+id/nav_recherche"
+            android:title="Fomulaire Recherche" />
+        <item
+            android:id="@+id/nav_contact"
+            android:title="Nous contacter" />
+        <item
+            android:id="@+id/nav_emplacement"
+            android:title="Nos emplacements" />
+    </group>
+
+</menu>
