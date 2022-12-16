@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.myapplication.fragment.Accueil;
 import com.example.myapplication.fragment.Contact;
 import com.example.myapplication.fragment.Detail;
-import com.example.myapplication.fragment.Don;
+import com.example.myapplication.fragment.DonFragment;
 import com.example.myapplication.fragment.Emplacement;
 import com.example.myapplication.fragment.Liste;
 import com.example.myapplication.fragment.Recherche;
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements
             fragmentClass = Detail.class;
         }
         if (item.getItemId() == R.id.nav_don) {
-            fragmentClass = Don.class;
+            fragmentClass = DonFragment.class;
         }
         if (item.getItemId() == R.id.nav_recherche) {
             fragmentClass = Recherche.class;
