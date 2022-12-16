@@ -12,18 +12,18 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication.R;
 
 
-public class Recherche extends Fragment {
+public class RechercheFragment extends Fragment {
     private EditText txtNom;
     private EditText txtNumero;
     private EditText txtEmail;
     private EditText txtMessage;
     private Button btnSoumettre;
-    public Recherche() {
+    public RechercheFragment() {
 
         // Required empty public constructor
     }
-    public static Recherche newInstance() {
-        return new Recherche();
+    public static RechercheFragment newInstance() {
+        return new RechercheFragment();
     }
 
     @Override
