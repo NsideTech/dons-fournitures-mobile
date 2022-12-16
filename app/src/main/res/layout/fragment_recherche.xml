@@ -68,41 +68,29 @@
 
 
             <EditText
-                android:id="@+id/editTextVilleRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="Ville"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextEmailRecherche" />
-
-            <EditText
                 android:id="@+id/editTextPaysRecherche"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="92dp"
                 android:ems="10"
+                android:hint="Pays"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Pays"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextVilleRecherche" />
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="223dp" />
 
             <EditText
                 android:id="@+id/editTextNomRecherche"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="92dp"
                 android:ems="10"
+                android:hint="Nom et Prenom"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Nom et Prenom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -110,12 +98,12 @@
                 android:id="@+id/editTextPhoneRecherche"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="92dp"
                 android:ems="10"
+                android:hint="Numéro de téléphone"
                 android:inputType="phone"
                 android:minHeight="48dp"
-                android:text="Numéro de téléphone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextNomRecherche" />
 
@@ -123,12 +111,12 @@
                 android:id="@+id/editTextEmailRecherche"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="92dp"
                 android:ems="10"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
-                android:text="Email"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextPhoneRecherche" />
 
@@ -136,8 +124,8 @@
                 android:id="@+id/editTextMessageRecherche"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="92dp"
                 android:background="@drawable/edit_text_border"
                 android:ems="10"
                 android:gravity="start|top"
@@ -152,8 +140,8 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="116dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="108dp"
                 android:text="Details des fournitures a donner"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -163,8 +151,8 @@
                 android:id="@+id/btnSoumettreRecherche"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="88dp"
                 android:text="Soumettre"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextMessageRecherche" />

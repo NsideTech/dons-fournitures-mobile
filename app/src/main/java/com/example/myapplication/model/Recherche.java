@@ -7,8 +7,15 @@ public class Recherche {
     private String phone;
     private String email;
     private String pays;
-    private String ville;
     private String description;
+
+    public Recherche( String nom, String phone, String email, String pays, String description) {
+        this.nom = nom;
+        this.phone = phone;
+        this.email = email;
+        this.pays = pays;
+        this.description = description;
+    }
 
     public Long getId() {
         return id;
@@ -28,10 +35,6 @@ public class Recherche {
 
     public String getPays() {
         return pays;
-    }
-
-    public String getVille() {
-        return ville;
     }
 
     public String getDescription() {
@@ -56,10 +59,6 @@ public class Recherche {
 
     public void setPays(String pays) {
         this.pays = pays;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
     }
 
     public void setDescription(String description) {
