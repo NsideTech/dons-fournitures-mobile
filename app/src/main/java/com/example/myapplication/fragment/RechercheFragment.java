@@ -121,6 +121,9 @@ public class RechercheFragment extends Fragment {
           }
       });
     }
+
+
+    
     private void saveSearch(String nom,String phone,String email, String description,String pays) {
       /*  String url = "http://10.0.2.2:8080/products";
         RequestQueue queue;
