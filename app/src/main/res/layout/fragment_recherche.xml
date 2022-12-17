@@ -1,165 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    tools:context=".fragment.Liste">
+    tools:context=".fragment.Liste" >
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:src="@drawable/books"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="180dp"
+        android:text="Je Recherche"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <EditText
+        android:id="@+id/editTextNomRecherche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="240dp"
+        android:hint="nom et prenoms"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="TouchTargetSizeCheck" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="314dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+    <EditText
+        android:id="@+id/editTextPhoneRecherche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="280dp"
+        android:hint="Numero de téléphone"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="TouchTargetSizeCheck" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="174dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+    <EditText
+        android:id="@+id/editTextEmailRecherche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="320dp"
+        android:hint="Email"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="TouchTargetSizeCheck" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="61dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+    <EditText
+        android:id="@+id/editTextPaysRecherche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="360dp"
+        android:hint="Pays"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        tools:ignore="TouchTargetSizeCheck" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="354dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:src="@drawable/books" />
-                </LinearLayout>
+    <EditText
+        android:id="@+id/edtDescriptionRecherche"
+        android:layout_width="398dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="top"
+        android:hint="Description"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Je recherche"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-
-            <EditText
-                android:id="@+id/editTextPaysRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginEnd="92dp"
-                android:ems="10"
-                android:hint="Pays"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="223dp" />
-
-            <EditText
-                android:id="@+id/editTextNomRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="92dp"
-                android:ems="10"
-                android:hint="Nom et Prenom"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/editTextPhoneRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="92dp"
-                android:ems="10"
-                android:hint="Numéro de téléphone"
-                android:inputType="phone"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNomRecherche" />
-
-            <EditText
-                android:id="@+id/editTextEmailRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="92dp"
-                android:ems="10"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPhoneRecherche" />
-
-            <EditText
-                android:id="@+id/editTextMessageRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
-                android:layout_marginEnd="92dp"
-                android:background="@drawable/edit_text_border"
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="textMultiLine"
-                android:maxLines="3"
-                android:minLines="3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPaysRecherche"
-                tools:ignore="MissingConstraints,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="108dp"
-                android:text="Details des fournitures a donner"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPaysRecherche" />
-
-            <Button
-                android:id="@+id/btnSoumettreRecherche"
-                android:layout_width="275dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:layout_marginEnd="88dp"
-                android:text="Soumettre"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextMessageRecherche" />
+    <Button
+        android:id="@+id/btnContacter"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="550dp"
+        android:text="Soumettre" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-
-
-</FrameLayout>
+</RelativeLayout>

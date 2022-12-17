@@ -27,7 +27,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txtAcceuil"
+        android:id="@+id/edtDescriptionRecherche"
         android:layout_width="398dp"
         android:layout_height="83dp"
         android:layout_marginStart="10dp"
@@ -37,7 +37,7 @@
         android:textStyle="bold|italic" />
 
     <Button
-        android:id="@+id/btnContribuer"
+        android:id="@+id/btnContacter"
         android:layout_width="207dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -53,7 +53,7 @@
         android:layout_marginBottom="300dp">
 
         <TextView
-            android:id="@+id/txtNom"
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"

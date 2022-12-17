@@ -20,7 +20,7 @@ public class Utils {
  }
 
  public static boolean checkRegexEmail(String email) {
-  if (!email.matches("[a-z-A-Z-0-9-][@][A-Z-a-z-][.][a-z-A-Z]{1,6}+")) {
+  if (!email.matches("[a-z-A-Z-0-9]+")) {
    return false;
   } else {
    return true;

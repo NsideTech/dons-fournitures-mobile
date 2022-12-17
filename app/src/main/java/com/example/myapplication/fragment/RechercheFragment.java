@@ -10,18 +10,11 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.myapplication.R;
 import com.example.myapplication.model.Recherche;
 import com.example.myapplication.model.RetrofitApi;
 import com.example.myapplication.model.Utils;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,73 +46,7 @@ public class RechercheFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-    }
-    private void validationInfo(){
-      btnSoumettre.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              String nom = txtNom.getText().toString();
-              String phone = txtNumero.getText().toString();
-              String email = txtEmail.getText().toString();
-              String pays = txtPays.getText().toString();
-              String description = txtDescription.getText().toString();
-              boolean nomIsValid =
-                      Utils.checkRegexNom(nom);
-              boolean phoneIsValid =
-                      Utils.checkRegexPhone(phone);
-              boolean emailIsValid =
-                      Utils.checkRegexNom(email);
-              boolean paysIsValid =
-                      Utils.checkRegexPhone(pays);
-              boolean descriptionIsValid =
-                      Utils.checkRegexPhone(description);
-              boolean isSaveSearch = true;
-              if(nom.isEmpty()){
-                  Toast.makeText(getContext(),
-                          R.string.nom_vide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(phone.isEmpty()){
-                  Toast.makeText(getContext(),
-                          R.string.phone_vide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(email.isEmpty()){
-                  Toast.makeText(getContext(),
-                          R.string.email_vide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(pays.isEmpty()){
-                  Toast.makeText(getContext(),
-                          R.string.pays_vide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(description.isEmpty()){
-                  Toast.makeText(getContext(),
-                          R.string.description_vide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(!nomIsValid){
-                  Toast.makeText(getContext(),
-                          R.string.nom_non_valide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(!phoneIsValid){
-                  Toast.makeText(getContext(),
-                          R.string.phone_non_valide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(!emailIsValid){
-                  Toast.makeText(getContext(),
-                          R.string.email_nom_valide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(!paysIsValid){
-                  Toast.makeText(getContext(),
-                          R.string.pays_non_valide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }else if(!descriptionIsValid){
-                  Toast.makeText(getContext(),
-                          R.string.description_non_valide, Toast.LENGTH_SHORT).show();
-                  isSaveSearch =false;
-              }
-              if(isSaveSearch){
-                saveSearch(nom,phone,email,pays,description);
-              }
-          }
-      });
+
     }
 
     private void saveSearch(String nom,String phone,String email, String description,String pays) {
@@ -180,9 +107,73 @@ public class RechercheFragment extends Fragment {
         txtNumero = view.findViewById(R.id.editTextPhoneRecherche);
         txtEmail = view.findViewById(R.id.editTextEmailRecherche);
         txtPays = view.findViewById(R.id.editTextPaysRecherche);
-        txtDescription = view.findViewById(R.id.editTextMessageRecherche);
-        btnSoumettre = view.findViewById(R.id.btnSoumettreRecherche);
-
+        txtDescription = view.findViewById(R.id.edtDescriptionRecherche);
+        btnSoumettre = view.findViewById(R.id.btnContacter);
+        btnSoumettre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nom = txtNom.getText().toString();
+                String phone = txtNumero.getText().toString();
+                String email = txtEmail.getText().toString();
+                String pays = txtPays.getText().toString();
+                String description = txtDescription.getText().toString();
+                boolean nomIsValid =
+                        Utils.checkRegexNom(nom);
+                boolean phoneIsValid =
+                        Utils.checkRegexPhone(phone);
+                boolean emailIsValid =
+                        Utils.checkRegexEmail(email);
+                boolean paysIsValid =
+                        Utils.checkRegexPays(pays);
+                boolean descriptionIsValid =
+                        Utils.checkRegexDescription(description);
+                boolean isSaveSearch = true;
+                if(nom.isEmpty()){
+                    Toast.makeText(getContext(),
+                            R.string.nom_vide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(phone.isEmpty()){
+                    Toast.makeText(getContext(),
+                            R.string.phone_vide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(email.isEmpty()){
+                    Toast.makeText(getContext(),
+                            R.string.email_vide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(pays.isEmpty()){
+                    Toast.makeText(getContext(),
+                            R.string.pays_vide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(description.isEmpty()){
+                    Toast.makeText(getContext(),
+                            R.string.description_vide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(!nomIsValid){
+                    Toast.makeText(getContext(),
+                            R.string.nom_non_valide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(!phoneIsValid){
+                    Toast.makeText(getContext(),
+                            R.string.phone_non_valide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(!emailIsValid){
+                    Toast.makeText(getContext(),
+                            R.string.email_nom_valide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(!paysIsValid){
+                    Toast.makeText(getContext(),
+                            R.string.pays_non_valide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }else if(!descriptionIsValid){
+                    Toast.makeText(getContext(),
+                            R.string.description_non_valide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch =false;
+                }
+                if(isSaveSearch){
+                    saveSearch(nom,phone,email,pays,description);
+                }
+            }
+        });
 
         return view;
     }

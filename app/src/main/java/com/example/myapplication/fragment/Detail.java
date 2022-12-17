@@ -50,13 +50,13 @@ public class Detail extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
 
-        txtName = view.findViewById(R.id.txtNom);
+        txtName = view.findViewById(R.id.txtName);
         txtPhone  = view.findViewById(R.id.txtPhone);
         txtEmail  = view.findViewById(R.id.txtEmail);
         txtPays  = view.findViewById(R.id.txtPays);
-        txtDescription  = view.findViewById(R.id.txtAcceuil);
+        txtDescription  = view.findViewById(R.id.edtDescriptionRecherche);
         imageView  = view.findViewById(R.id.imageview);
-        btnContacter = view.findViewById(R.id.btnContribuer);
+        btnContacter = view.findViewById(R.id.btnContacter);
 
         txtName.setText(rechercheItems.get(itemposition).getNom());
         txtPhone.setText(rechercheItems.get(itemposition).getPhone());

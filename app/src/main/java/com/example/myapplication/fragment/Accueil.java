@@ -1,6 +1,5 @@
 package com.example.myapplication.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +17,9 @@ public class Accueil extends Fragment {
     private Button btnContribuer;
     private TextView txtAcceuil;
     private int count;
+    RechercheInterface rechercheInterface;
 
-
-
+    public interface FragmentAlistener{void onInputAsent();}
     public Accueil() {}
 
 
@@ -40,19 +39,21 @@ public class Accueil extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_accueil, container, false);
 
-        btnContribuer = view.findViewById(R.id.btnContribuer);
-        //txtAcceuil = view.findViewById(R.id.txtAcceuilAppli);
+        btnContribuer = view.findViewById(R.id.btnContacter);
+        txtAcceuil = view.findViewById(R.id.txtAcceuilAppli);
 
-        txtAcceuil.setText("Aujourd'hui, nous avons " + count + "demandes de fournitures.");
+        txtAcceuil.setText("Aujourd'hui, nous avons " + count + " demandes de fournitures.");
 
         btnContribuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(getContext(),Accueil.class);
-                startActivity(i);
+                //Bundle bundle = new Bundle();
+                // rechercheFragment.setArguments(bundle);
+                RechercheFragment rechercheFragment = new RechercheFragment();
+                getFragmentManager().beginTransaction().replace(R.id.container_fragment,rechercheFragment).commit();
             }
         });
         return view;
     }
+
 }

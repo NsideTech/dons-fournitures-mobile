@@ -27,7 +27,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btnContribuer"
+        android:id="@+id/btnContacter"
         android:layout_width="207dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
