@@ -18,15 +18,18 @@ import com.example.myapplication.fragment.DonFragment;
 import com.example.myapplication.fragment.Emplacement;
 import com.example.myapplication.fragment.Liste;
 import com.example.myapplication.fragment.RechercheFragment;
+import com.example.myapplication.model.Recherche;
+import com.example.myapplication.model.RechercheInterface;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.List;
 import java.util.Objects;
 
 
 
 //La classe implémente l'interface CartInterface lui permettant d'implémenter les 2 méthodes.
 public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener {
+        NavigationView.OnNavigationItemSelectedListener, RechercheInterface {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -107,5 +110,37 @@ public class MainActivity extends AppCompatActivity implements
 
         setTitle(item.getTitle());
         return true;
+    }
+
+
+    @Override
+    public void saveInformation(Recherche recherche) {
+
+    }
+
+    @Override
+    public void saveInt(int i) {
+
+    }
+
+    @Override
+    public int getInt() {
+        return 0;
+    }
+
+    @Override
+    public void saveIntCount(int i) {
+
+    }
+
+    @Override
+    public int getIntCount() {
+        return 0;
+    }
+
+
+    @Override
+    public List<Recherche> getInformation() {
+        return null;
     }
 }

@@ -73,57 +73,55 @@ public class RechercheFragment extends Fragment {
                       Utils.checkRegexPhone(pays);
               boolean descriptionIsValid =
                       Utils.checkRegexPhone(description);
-              boolean saveSearch = true;
+              boolean isSaveSearch = true;
               if(nom.isEmpty()){
                   Toast.makeText(getContext(),
                           R.string.nom_vide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(phone.isEmpty()){
                   Toast.makeText(getContext(),
                           R.string.phone_vide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(email.isEmpty()){
                   Toast.makeText(getContext(),
                           R.string.email_vide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(pays.isEmpty()){
                   Toast.makeText(getContext(),
                           R.string.pays_vide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(description.isEmpty()){
                   Toast.makeText(getContext(),
                           R.string.description_vide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(!nomIsValid){
                   Toast.makeText(getContext(),
                           R.string.nom_non_valide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(!phoneIsValid){
                   Toast.makeText(getContext(),
                           R.string.phone_non_valide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(!emailIsValid){
                   Toast.makeText(getContext(),
                           R.string.email_nom_valide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(!paysIsValid){
                   Toast.makeText(getContext(),
                           R.string.pays_non_valide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }else if(!descriptionIsValid){
                   Toast.makeText(getContext(),
                           R.string.description_non_valide, Toast.LENGTH_SHORT).show();
-                  saveSearch =false;
+                  isSaveSearch =false;
               }
-              if(saveSearch){
+              if(isSaveSearch){
                 saveSearch(nom,phone,email,pays,description);
               }
           }
       });
     }
 
-
-    
     private void saveSearch(String nom,String phone,String email, String description,String pays) {
       /*  String url = "http://10.0.2.2:8080/products";
         RequestQueue queue;

@@ -66,12 +66,10 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ListView
-                android:id="@+id/list_view"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:alwaysDrawnWithCache="true" />
+                android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
 
