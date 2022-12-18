@@ -43,7 +43,7 @@ public class Liste extends Fragment {
     }
 
     private void fetchRechercheItem() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8080/Search")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8080/Search/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitApi retrofitApi = retrofit.create(RetrofitApi.class);

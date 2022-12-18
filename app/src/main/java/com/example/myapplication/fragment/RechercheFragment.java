@@ -34,7 +34,7 @@ public class RechercheFragment extends Fragment {
     private EditText txtDescription;
     private Button btnSoumettre;
     private List<Recherche> recherches = new ArrayList<>();
-    private final Gson gson = new Gson();
+
 
     public RechercheFragment() {}
 
@@ -50,33 +50,8 @@ public class RechercheFragment extends Fragment {
     }
 
     private void saveSearch(String nom,String phone,String email, String description,String pays) {
-      /*  String url = "http://10.0.2.2:8080/products";
-        RequestQueue queue;
-        queue = Volley.newRequestQueue(requireContext());
-        StringRequest request = new StringRequest(Request.Method.POST,url;
-                response -> {
-                    try{
-                        Recherche recherche = new Recherche();
-                        recherche.setNom(nom);
-                        recherche.setPhone(phone);
-                        recherche.setEmail(email);
-                        recherche.setPays(pays);
-                        recherche.setDescription(description);
-                        recherches.add(recherche);
-                        GsonBuilder builder = new GsonBuilder();
-                        builder.setPrettyPrinting();
 
-                        Gson gson = builder.create();
-                        Recherche recherche = gson.fromJson(jsonString, Recherche.class);
-                        jsonString = gson.toJson(recherche);
-                        recherches.add(jsonString);
-                    }catch (){
-
-                    }
-                }
-
-    }*/
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8080/Search")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8080/Search/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitApi retrofitApi = retrofit.create(RetrofitApi.class);

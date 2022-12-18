@@ -15,8 +15,8 @@ import com.example.myapplication.fragment.Accueil;
 import com.example.myapplication.fragment.Contact;
 import com.example.myapplication.fragment.Detail;
 import com.example.myapplication.fragment.DonFragment;
-import com.example.myapplication.fragment.Emplacement;
 import com.example.myapplication.fragment.Liste;
+import com.example.myapplication.fragment.MapsFragment;
 import com.example.myapplication.fragment.RechercheFragment;
 import com.example.myapplication.model.Recherche;
 import com.example.myapplication.model.RechercheInterface;
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements
             fragmentClass = Contact.class;
         }
         if (item.getItemId() == R.id.nav_emplacement) {
-            fragmentClass = Emplacement.class;
+            fragmentClass = MapsFragment.class;
         }
 
         Fragment fragment;
