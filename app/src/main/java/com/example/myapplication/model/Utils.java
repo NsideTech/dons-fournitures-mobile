@@ -3,7 +3,7 @@ package com.example.myapplication.model;
 public class Utils {
  //Créer les REGEX
  public static boolean checkRegexNom(String nom) {
-  if (!nom.matches("[a-z-A-Z-0-9-]{1,21}+")) {
+  if (!nom.matches("[a-z-A-Z-]{1,21}+")) {
    return false;
   } else {
    return true;
@@ -20,7 +20,7 @@ public class Utils {
  }
 
  public static boolean checkRegexEmail(String email) {
-  if (!email.matches("[a-z-A-Z-0-9]+")) {
+  if (!email.matches("[a-z-A-Z-0-9-_ ]{1,50}[@][a-z-A-Z-._ ]{1,50}[.][a-z]{1,10}+")) {
    return false;
   } else {
    return true;

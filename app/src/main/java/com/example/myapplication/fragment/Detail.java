@@ -42,6 +42,20 @@ public class Detail extends Fragment {
         super.onCreate(savedInstanceState);
         rechercheItems = ((RechercheInterface) requireContext()).getInformation();
         itemposition = ((RechercheInterface) requireContext()).getInt();
+        AfficheDetails();
+    }
+
+    private void AfficheDetails(){
+        if(rechercheItems.isEmpty()){
+            return ;
+        }else {
+            txtName.setText(rechercheItems.get(itemposition).getNom());
+            txtPhone.setText(rechercheItems.get(itemposition).getPhone());
+            txtEmail.setText(rechercheItems.get(itemposition).getEmail());
+            txtDescription.setText(rechercheItems.get(itemposition).getDescription());
+            txtPays.setText(rechercheItems.get(itemposition).getPays());
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.books));
+        }
     }
 
     @Override
@@ -55,15 +69,10 @@ public class Detail extends Fragment {
         txtEmail  = view.findViewById(R.id.txtEmail);
         txtPays  = view.findViewById(R.id.txtPays);
         txtDescription  = view.findViewById(R.id.edtDescriptionRecherche);
-        imageView  = view.findViewById(R.id.imageview);
+        imageView  = view.findViewById(R.id.logo);
         btnContacter = view.findViewById(R.id.btnContacter);
-
-        txtName.setText(rechercheItems.get(itemposition).getNom());
-        txtPhone.setText(rechercheItems.get(itemposition).getPhone());
-        txtEmail.setText(rechercheItems.get(itemposition).getEmail());
-        txtDescription.setText(rechercheItems.get(itemposition).getDescription());
-        txtPays.setText(rechercheItems.get(itemposition).getPays());
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.books));
+
 
 
         return view;

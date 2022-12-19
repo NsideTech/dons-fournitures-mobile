@@ -51,6 +51,9 @@ public class Liste extends Fragment {
         call.enqueue(new Callback<List<Recherche>>() {
             @Override
             public void onResponse(Call<List<Recherche>> call, Response<List<Recherche>> response) {
+                if(!response.isSuccessful()){
+                    return;
+                }
                 List<Recherche> recherches = response.body();
                 recyclerView.setAdapter(new CustomRecyclerViewAdapter(recherches,getContext()));
             }
