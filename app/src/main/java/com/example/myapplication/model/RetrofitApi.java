@@ -9,10 +9,10 @@ import retrofit2.http.POST;
 
 public interface RetrofitApi {
 
-@POST("Search")
-Call<Recherche> createPost(@Body Recherche recherche);
+@POST("/searches")
+Call<Void> createPost(@Body Recherche recherche);
 
-@GET("all")
+@GET("/all")
 Call<List<Recherche>> getRecherche();
 
 }

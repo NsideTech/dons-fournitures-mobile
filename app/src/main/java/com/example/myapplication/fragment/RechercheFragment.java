@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.Recherche;
+import com.example.myapplication.model.RechercheInterface;
 import com.example.myapplication.model.RetrofitApi;
 import com.example.myapplication.model.Utils;
 import com.google.gson.Gson;
@@ -34,7 +35,7 @@ public class RechercheFragment extends Fragment {
     private EditText txtDescription;
     private Button btnSoumettre;
     private List<Recherche> recherches = new ArrayList<>();
-
+    private static int count;
 
     public RechercheFragment() {}
 
@@ -46,6 +47,11 @@ public class RechercheFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        ((RechercheInterface) getContext()).saveIntCount(count);
+        Bundle bundle = new Bundle();
+        bundle.putInt("0",count);
+        Accueil accueil = new Accueil();
+        accueil.setArguments(bundle);
 
     }
 
@@ -56,10 +62,10 @@ public class RechercheFragment extends Fragment {
                 .build();
         RetrofitApi retrofitApi = retrofit.create(RetrofitApi.class);
         Recherche search = new Recherche(nom,phone,email,pays,description);
-        Call<Recherche> call = retrofitApi.createPost(search);
-        call.enqueue((new Callback<Recherche>() {
+        Call<Void> call = retrofitApi.createPost(search);
+        call.enqueue((new Callback<Void>() {
             @Override
-            public void onResponse(Call<Recherche> call, Response<Recherche> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 Toast.makeText(getContext(), "Data added to API", Toast.LENGTH_SHORT).show();
                 txtNom.setText("");
                 txtEmail.setText("");
@@ -69,7 +75,7 @@ public class RechercheFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<Recherche> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(getContext(), "Data fail to API", Toast.LENGTH_SHORT).show();
             }
         }));
@@ -87,6 +93,7 @@ public class RechercheFragment extends Fragment {
         btnSoumettre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String nom = txtNom.getText().toString();
                 String phone = txtNumero.getText().toString();
                 String email = txtEmail.getText().toString();
@@ -147,6 +154,8 @@ public class RechercheFragment extends Fragment {
                 if(isSaveSearch){
                     saveSearch(nom,phone,email,pays,description);
                 }
+                count++;
+
             }
         });
 

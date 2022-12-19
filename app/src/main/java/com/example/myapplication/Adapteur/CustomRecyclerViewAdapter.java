@@ -2,6 +2,7 @@ package com.example.myapplication.Adapteur;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.fragment.Accueil;
 import com.example.myapplication.fragment.Detail;
 import com.example.myapplication.model.Recherche;
 import com.example.myapplication.model.RechercheInterface;
@@ -22,7 +24,7 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<ArticleViewH
     private List<Recherche> recherches;
     private Context context;
     private LayoutInflater mLayoutInflater;
-    private static int count;
+
 
     public CustomRecyclerViewAdapter(List<Recherche> recherches, Context context) {
         this.context = context;
@@ -53,10 +55,9 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<ArticleViewH
         if(!this.recherches.isEmpty()){
             ((RechercheInterface) context).saveInformation(recherche);
             ((RechercheInterface) context).saveInt(itemPosition);
-            Intent intent = new Intent(context, Detail.class);
-            context.startActivity(intent);
-            count++;
-            ((RechercheInterface) context).saveIntCount(count);
+            //Intent intent = new Intent(context, Detail.class);
+            //context.startActivity(intent);
+
         }
 
     }

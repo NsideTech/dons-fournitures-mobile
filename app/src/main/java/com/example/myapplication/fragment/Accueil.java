@@ -33,6 +33,8 @@ public class Accueil extends Fragment {
         super.onCreate(savedInstanceState);
 
         count = ((RechercheInterface) requireContext()).getIntCount();
+        //Bundle bundle = this.getArguments();
+        //count = bundle.getInt("0");
     }
 
     @Override
