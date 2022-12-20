@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.myapplication.fragment.Accueil;
 import com.example.myapplication.fragment.Contact;
-import com.example.myapplication.fragment.Detail;
 import com.example.myapplication.fragment.DonFragment;
 import com.example.myapplication.fragment.Liste;
 import com.example.myapplication.fragment.MapsFragment;
@@ -81,9 +80,6 @@ public class MainActivity extends AppCompatActivity implements
         }
         if (item.getItemId() == R.id.nav_listes) {
             fragmentClass = Liste.class;
-        }
-        if (item.getItemId() == R.id.nav_detail) {
-            fragmentClass = Detail.class;
         }
         if (item.getItemId() == R.id.nav_don) {
             fragmentClass = DonFragment.class;

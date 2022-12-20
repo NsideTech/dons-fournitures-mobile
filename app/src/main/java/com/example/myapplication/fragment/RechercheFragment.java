@@ -55,7 +55,7 @@ public class RechercheFragment extends Fragment {
 
     }
 
-    private void saveSearch(String nom,String phone,String email, String description,String pays) {
+    private void saveSearch(String nom,String phone,String email, String pays,String description) {
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8080/Search/")
                 .addConverterFactory(GsonConverterFactory.create())

@@ -10,9 +10,6 @@
             android:id="@+id/nav_listes"
             android:title="Listes" />
         <item
-            android:id="@+id/nav_detail"
-            android:title="Détails" />
-        <item
             android:id="@+id/nav_don"
             android:title="Formulaire Don" />
         <item

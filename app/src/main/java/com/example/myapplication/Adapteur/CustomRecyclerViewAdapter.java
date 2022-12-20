@@ -2,20 +2,16 @@ package com.example.myapplication.Adapteur;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.DetailActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.fragment.Accueil;
-import com.example.myapplication.fragment.Detail;
 import com.example.myapplication.model.Recherche;
-import com.example.myapplication.model.RechercheInterface;
 
 import java.util.List;
 
@@ -53,10 +49,20 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<ArticleViewH
         Recherche recherche  = this.recherches.get(itemPosition);
 
         if(!this.recherches.isEmpty()){
-            ((RechercheInterface) context).saveInformation(recherche);
-            ((RechercheInterface) context).saveInt(itemPosition);
-            //Intent intent = new Intent(context, Detail.class);
-            //context.startActivity(intent);
+
+            Intent intent = new Intent(context, DetailActivity.class);
+            String nom = recherche.getNom();
+            String phone = recherche.getPhone();
+            String email = recherche.getEmail();
+            String pays = recherche.getPays();
+            String description = recherche.getDescription();
+            intent.putExtra("nom", nom);
+            intent.putExtra("phone", phone);
+            intent.putExtra("email", email);
+            intent.putExtra("pays", pays);
+            intent.putExtra("description", description);
+
+            context.startActivity(intent);
 
         }
 
