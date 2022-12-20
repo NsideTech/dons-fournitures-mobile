@@ -7,6 +7,8 @@
     <string name="phone_non_valide">Numéro de téléphone est non valide.</string>
     <string name="nom_vide">Ajouter votre nom.</string>
     <string name="nom_non_valide">Nom est non valide.</string>
+    <string name="ville_vide">La ville est vide.</string>
+    <string name="ville_non_valide">La ville est non valide.</string>
     <string name="email_vide">Ajouter votre email.</string>
     <string name="email_nom_valide">email est non valide.</string>
     <string name="pays_vide">Ajouter votre pays.</string>

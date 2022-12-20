@@ -15,4 +15,7 @@ Call<Void> createPost(@Body Recherche recherche);
 @GET("/all")
 Call<List<Recherche>> getRecherche();
 
+@POST("/give")
+Call<Void> createGive(@Body Don don);
+
 }

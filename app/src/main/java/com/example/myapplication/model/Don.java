@@ -10,8 +10,7 @@ public class Don {
     private String ville;
     private String description;
 
-    public Don(Long id, String nom, String phone, String email, String pays, String ville, String description) {
-        this.id = id;
+    public Don(String nom, String phone, String email, String pays, String ville, String description) {
         this.nom = nom;
         this.phone = phone;
         this.email = email;
