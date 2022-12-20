@@ -9,7 +9,7 @@ public class Recherche {
     private String pays;
     private String description;
 
-    public Recherche( String nom, String phone, String email, String pays, String description) {
+    public Recherche(String nom, String phone, String email, String pays, String description) {
         this.nom = nom;
         this.phone = phone;
         this.email = email;

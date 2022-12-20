@@ -18,10 +18,12 @@ public class Contact extends Fragment {
     private EditText txtEmail;
     private EditText txtMessage;
     private Button btnSoumettre;
+
     public Contact() {
 
         // Required empty public constructor
     }
+
     public static Contact newInstance() {
         return new Contact();
     }

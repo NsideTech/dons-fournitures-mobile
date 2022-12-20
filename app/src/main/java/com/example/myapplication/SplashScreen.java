@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
     private ImageView logo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,11 +20,11 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent y = new Intent(SplashScreen.this,MainActivity.class);
+                Intent y = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(y);
                 finish();
             }
-        },5000);
+        }, 5000);
 
     }
 }

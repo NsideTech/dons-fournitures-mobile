@@ -36,6 +36,7 @@ public class DonFragment extends Fragment {
 
         // Required empty public constructor
     }
+
     public static DonFragment newInstance() {
         return new DonFragment();
     }
@@ -80,57 +81,57 @@ public class DonFragment extends Fragment {
                 boolean descriptionIsValid =
                         Utils.checkRegexDescription(description);
                 boolean isSaveSearch = true;
-                if(nom.isEmpty()){
+                if (nom.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.nom_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(phone.isEmpty()){
+                    isSaveSearch = false;
+                } else if (phone.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.phone_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(ville.isEmpty()){
+                    isSaveSearch = false;
+                } else if (ville.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.ville_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(email.isEmpty()){
+                    isSaveSearch = false;
+                } else if (email.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.email_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(pays.isEmpty()){
+                    isSaveSearch = false;
+                } else if (pays.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.pays_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(description.isEmpty()){
+                    isSaveSearch = false;
+                } else if (description.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.description_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!nomIsValid){
+                    isSaveSearch = false;
+                } else if (!nomIsValid) {
                     Toast.makeText(getContext(),
                             R.string.nom_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!phoneIsValid){
+                    isSaveSearch = false;
+                } else if (!phoneIsValid) {
                     Toast.makeText(getContext(),
                             R.string.phone_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!emailIsValid){
+                    isSaveSearch = false;
+                } else if (!emailIsValid) {
                     Toast.makeText(getContext(),
                             R.string.email_nom_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!villeIsValid){
+                    isSaveSearch = false;
+                } else if (!villeIsValid) {
                     Toast.makeText(getContext(),
                             R.string.ville_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!paysIsValid){
+                    isSaveSearch = false;
+                } else if (!paysIsValid) {
                     Toast.makeText(getContext(),
                             R.string.pays_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!descriptionIsValid){
+                    isSaveSearch = false;
+                } else if (!descriptionIsValid) {
                     Toast.makeText(getContext(),
                             R.string.description_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
+                    isSaveSearch = false;
                 }
-                if(isSaveSearch){
-                    saveGive(nom,phone,email,pays,ville,description);
+                if (isSaveSearch) {
+                    saveGive(nom, phone, email, pays, ville, description);
                 }
 
             }
@@ -144,7 +145,7 @@ public class DonFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitApi retrofitApi = retrofit.create(RetrofitApi.class);
-        Don don = new Don(nom,phone,email,pays,ville,description);
+        Don don = new Don(nom, phone, email, pays, ville, description);
         Call<Void> call = retrofitApi.createGive(don);
         call.enqueue((new Callback<Void>() {
             @Override

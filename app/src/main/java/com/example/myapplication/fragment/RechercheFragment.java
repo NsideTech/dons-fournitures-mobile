@@ -12,10 +12,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.Recherche;
-import com.example.myapplication.model.RechercheInterface;
 import com.example.myapplication.model.RetrofitApi;
 import com.example.myapplication.model.Utils;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +35,8 @@ public class RechercheFragment extends Fragment {
     private List<Recherche> recherches = new ArrayList<>();
     private static int count;
 
-    public RechercheFragment() {}
+    public RechercheFragment() {
+    }
 
     public static RechercheFragment newInstance() {
         return new RechercheFragment();
@@ -47,26 +46,21 @@ public class RechercheFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        ((RechercheInterface) getContext()).saveIntCount(count);
-        Bundle bundle = new Bundle();
-        bundle.putInt("0",count);
-        Accueil accueil = new Accueil();
-        accueil.setArguments(bundle);
 
     }
 
-    private void saveSearch(String nom,String phone,String email, String pays,String description) {
+    private void saveSearch(String nom, String phone, String email, String pays, String description) {
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitApi retrofitApi = retrofit.create(RetrofitApi.class);
-        Recherche search = new Recherche(nom,phone,email,pays,description);
+        Recherche search = new Recherche(nom, phone, email, pays, description);
         Call<Void> call = retrofitApi.createPost(search);
         call.enqueue((new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                Toast.makeText(getContext(), "Data added to API", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.information_valide, Toast.LENGTH_SHORT).show();
                 txtNom.setText("");
                 txtEmail.setText("");
                 txtNumero.setText("");
@@ -76,7 +70,7 @@ public class RechercheFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(getContext(), "Data fail to API", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.information_non_valide, Toast.LENGTH_SHORT).show();
             }
         }));
     }
@@ -89,7 +83,7 @@ public class RechercheFragment extends Fragment {
         txtEmail = view.findViewById(R.id.editTextEmailRecherche);
         txtPays = view.findViewById(R.id.editTextPaysRecherche);
         txtDescription = view.findViewById(R.id.edtDescriptionRecherche);
-        btnSoumettre = view.findViewById(R.id.btnContacter);
+        btnSoumettre = view.findViewById(R.id.btnSoumettreSearch);
         btnSoumettre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,49 +104,49 @@ public class RechercheFragment extends Fragment {
                 boolean descriptionIsValid =
                         Utils.checkRegexDescription(description);
                 boolean isSaveSearch = true;
-                if(nom.isEmpty()){
+                if (nom.isEmpty()) {
                     Toast.makeText(getContext(),
-                            R.string.nom_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(phone.isEmpty()){
+                           R.string.nom_vide, Toast.LENGTH_SHORT).show();
+                    isSaveSearch = false;
+                } else if (phone.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.phone_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(email.isEmpty()){
+                    isSaveSearch = false;
+                } else if (email.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.email_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(pays.isEmpty()){
+                    isSaveSearch = false;
+                } else if (pays.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.pays_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(description.isEmpty()){
+                    isSaveSearch = false;
+                } else if (description.isEmpty()) {
                     Toast.makeText(getContext(),
                             R.string.description_vide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!nomIsValid){
+                    isSaveSearch = false;
+                } else if (!nomIsValid) {
                     Toast.makeText(getContext(),
                             R.string.nom_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!phoneIsValid){
+                    isSaveSearch = false;
+                } else if (!phoneIsValid) {
                     Toast.makeText(getContext(),
                             R.string.phone_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!emailIsValid){
+                    isSaveSearch = false;
+                } else if (!emailIsValid) {
                     Toast.makeText(getContext(),
                             R.string.email_nom_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!paysIsValid){
+                    isSaveSearch = false;
+                } else if (!paysIsValid) {
                     Toast.makeText(getContext(),
                             R.string.pays_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
-                }else if(!descriptionIsValid){
+                    isSaveSearch = false;
+                } else if (!descriptionIsValid) {
                     Toast.makeText(getContext(),
                             R.string.description_non_valide, Toast.LENGTH_SHORT).show();
-                    isSaveSearch =false;
+                    isSaveSearch = false;
                 }
-                if(isSaveSearch){
-                    saveSearch(nom,phone,email,pays,description);
+                if (isSaveSearch) {
+                    saveSearch(nom, phone, email, pays, description);
                 }
                 count++;
 

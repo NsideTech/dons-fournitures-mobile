@@ -15,4 +15,7 @@
     <string name="pays_non_valide">pays est non valide.</string>
     <string name="description_vide">Ajouter les fournitures recherchés.</string>
     <string name="description_non_valide">fourniture est non valide.</string>
+    <string name="information_valide">Votre recherche a été ajouter avec success.</string>
+    <string name="information_non_valide">impossible d"ajouter la recherche.</string>
+
 </resources>

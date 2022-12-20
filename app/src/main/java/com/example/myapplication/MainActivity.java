@@ -18,7 +18,6 @@ import com.example.myapplication.fragment.Liste;
 import com.example.myapplication.fragment.MapsFragment;
 import com.example.myapplication.fragment.RechercheFragment;
 import com.example.myapplication.model.Recherche;
-import com.example.myapplication.model.RechercheInterface;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
@@ -26,9 +25,8 @@ import java.util.Objects;
 
 
 
-//La classe implémente l'interface CartInterface lui permettant d'implémenter les 2 méthodes.
 public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener, RechercheInterface {
+        NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -47,10 +45,7 @@ public class MainActivity extends AppCompatActivity implements
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        //ces 2 lignes permettent de dire a android de nous laisser faire des appels vers internet
-        //sur le main thread. Il n'est pas conseillé de le faire quand nous voulons aller en prod
-        //car plus nous avons des données avec des images, plus, cela peut causer un
-        //ralentissement de notre application
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -58,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        //selection du fragment des produits au démarrage de l'application
+
         getSupportFragmentManager().
                 beginTransaction().replace(R.id.container_fragment, new Accueil()).commit();
     }
@@ -73,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        //Recherche du fragment en fonction de la selection du menu
+
         Class fragmentClass = null;
         if (item.getItemId() == R.id.nav_accueil) {
             fragmentClass = Accueil.class;
@@ -108,36 +103,4 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
-
-
-    @Override
-    public void saveInformation(Recherche recherche) {
-
-    }
-
-    @Override
-    public void saveInt(int i) {
-
-    }
-
-    @Override
-    public int getInt() {
-        return 0;
-    }
-
-    @Override
-    public void saveIntCount(int i) {
-
-    }
-
-    @Override
-    public int getIntCount() {
-        return 0;
-    }
-
-
-    @Override
-    public List<Recherche> getInformation() {
-        return null;
-    }
 }

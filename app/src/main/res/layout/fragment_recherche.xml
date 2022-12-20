@@ -17,84 +17,47 @@
         android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtTitreSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="170dp"
         android:text="Je Recherche"
         android:textColor="#ED2468"
         android:textSize="24sp"
         android:textStyle="bold" />
-    <TextView
-        android:id="@+id/textViewNAmeDetail"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="250dp"
-        android:textColor="#C3134E"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:text="Nom ret Prenom:" />
 
     <EditText
         android:id="@+id/editTextNomRecherche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="24dp"
         android:hint="nom et prenoms"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         tools:ignore="TouchTargetSizeCheck" />
-    <TextView
-        android:id="@+id/textViewEmailDetail"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="320dp"
-        android:text="Email:"
-        android:textColor="#C3134E"
-        android:textSize="16sp"
-        android:textStyle="bold|italic" />
-    <TextView
-        android:id="@+id/textViewPhoneDetail"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="280dp"
-        android:text="No Telephone :"
-        android:textColor="#C3134E"
-        android:textSize="16sp"
-        android:textStyle="bold|italic" />
 
     <EditText
         android:id="@+id/editTextPhoneRecherche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="24dp"
         android:hint="Numero de téléphone"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         tools:ignore="TouchTargetSizeCheck" />
-    <TextView
-        android:id="@+id/textViewPaysDetail"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="360dp"
-        android:textColor="#C3134E"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        tools:text="Pays:" />
 
     <EditText
         android:id="@+id/editTextEmailRecherche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="315dp"
+        android:layout_marginEnd="24dp"
         android:hint="Email"
         android:textSize="16sp"
         android:textStyle="bold|italic"
@@ -104,8 +67,9 @@
         android:id="@+id/editTextPaysRecherche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="24dp"
         android:hint="Pays"
         android:textSize="16sp"
         android:textStyle="bold|italic"
@@ -114,17 +78,17 @@
     <EditText
         android:id="@+id/edtDescriptionRecherche"
         android:layout_width="398dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="450dp"
         android:layout_marginEnd="10dp"
         android:gravity="top"
         android:hint="Description"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold|italic" />
 
     <Button
-        android:id="@+id/btnContacter"
+        android:id="@+id/btnSoumettreSearch"
         android:layout_width="207dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
