@@ -61,14 +61,14 @@ public class DetailActivity extends AppCompatActivity {
         btnContacter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mail = String.format("mailto: %s","jackydetonga43@gmail.com");
-                String email =  "Je voudrais faire un don pour la demande avec l'identifiant " + id;
-
-
+                String mail = email;
+                String subject = "Don";
+                String message =  "Je voudrais faire un don pour la demande avec l'identifiant " + id;
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, mail);
-                intent.putExtra(Intent.EXTRA_SUBJECT, email);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{mail});
+                intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                intent.putExtra(Intent.EXTRA_TEXT, message);
                 startActivity(intent);
             }
         });
