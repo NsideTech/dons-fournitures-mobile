@@ -17,5 +17,7 @@
     <string name="description_non_valide">fourniture est non valide.</string>
     <string name="information_valide">Votre recherche a été ajouter avec success.</string>
     <string name="information_non_valide">impossible d"ajouter la recherche.</string>
+    <string name="message_vide">entrez votre message.</string>
+    <string name="message_valide">Votre message a été envoyé.</string>
 
 </resources>

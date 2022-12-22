@@ -3,6 +3,7 @@ package com.example.myapplication;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
@@ -25,6 +26,7 @@ public class AcceuilTest {
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityTestRule = new
             ActivityScenarioRule<>(MainActivity.class);
+
     @Before
     public void setUp() {
 
@@ -32,11 +34,10 @@ public class AcceuilTest {
     }
 
     @Test
-    public void matriculeValide(){
-        //onView(withText("Formulaire Employé")).check(matches(isDisplayed()));
+    public void AcceuilValide() {
 
-
-        int count =0;
+        //valeur du nombre de recherche dans notre Api
+        int count = 1;
         String expectedText = "Aujourd'hui, nous avons " + count + " demandes de fournitures.";
         onView(withId(R.id.txtAcceuilAppli)).check(matches(withText(expectedText)));
         onView(withId(R.id.btnContribuer)).perform(ViewActions.click());

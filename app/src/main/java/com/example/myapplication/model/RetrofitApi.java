@@ -18,4 +18,7 @@ public interface RetrofitApi {
     @POST("/give")
     Call<Void> createGive(@Body Don don);
 
+    @POST("/messages")
+    Call<Void> createMessage(@Body ReceiveMessage receiveMessage);
+
 }

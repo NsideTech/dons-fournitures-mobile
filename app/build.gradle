@@ -51,4 +51,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation'com.sun.mail:android-mail:1.6.0'
     implementation'com.sun.mail:android-activation:1.6.0'
+    def fragment_version = "1.5.2"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 }
